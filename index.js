@@ -28,17 +28,17 @@ const {fetchMyIP, fetchCoordsByIP, fetchISSFlyOverTimes, nextISSTimesForMyLocati
 
 //       console.log("It worked!" , result);
 
-      nextISSTimesForMyLocation((error, finals) => {
-        if (error) {
-          console.log("didnt' work but it was close:", error);
-        }
+nextISSTimesForMyLocation((error, finals) => {
+  if (error) {
+    console.log("didnt' work but it was close:", error);
+  }
 
-        for(const final of finals) {
-          const date = new Date(0);
-          date.setUTCSeconds(final.risetime);
-          console.log(`Next pass at ${date} for ${final.duration} secs`);
-        }
-      });
+  for (const final of finals) {
+    const date = new Date(0);
+    date.setUTCSeconds(final.risetime);
+    console.log(`Next pass at ${date} for ${final.duration} secs`);
+  }
+});
 //     });
 //   });
 // });
